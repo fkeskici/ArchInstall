@@ -11,6 +11,8 @@ debugedit
 fakeroot
 fish
 reflector
+wget
+os-prober
 
 # Graphics
 converseen
