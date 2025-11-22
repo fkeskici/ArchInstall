@@ -1,0 +1,32 @@
+sudo pacman -S ark dolphin kate konsole plasma-meta plasma-workspace sddm
+sudo systemctl enable sddm
+sudo pacman -S intel-ucode debugedit fakeroot
+Klavye Türkçe dil desteği:
+sudo nano /etc/vconsole.conf
+# aşağıdaki satırları ekle
+KEYMAP=trq
+XKBLAYOUT=tr
+XKBMODEL=pc105
+XKBOPTIONS=terminate:ctrl_alt_bksp
+sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber bluez bluez-utils
+systemctl --user restart pipewire pipewire-pulse wireplumber
+sudo systemctl enable bluetooth --now
+https://aur.chaotic.cx/
+git clone https://aur.archlinux.org/paru-bin
+cd paru-bin
+makepkg -si
+cd ..
+paru
+rm -fr paru-bin/
+sudo pacman -S zram-generator
+sudo nano /etc/systemd/zram-generator.conf
+[zram0]
+compression-algorithm = zstd
+zram-size = ram / 2
+swap-priority = 100
+fs-type = swap
+save
+sudo systemctl daemon-reload
+sudo systemctl start /dev/zram0
+zramctl
+

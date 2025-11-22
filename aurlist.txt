@@ -1,0 +1,5 @@
+ferdium-bin
+helium-browser-bin
+stacer-bin
+ttf-ms-fonts
+upscayl-bin

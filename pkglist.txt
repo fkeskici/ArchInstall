@@ -1,0 +1,56 @@
+# Plasma
+ark
+dolphin
+kate
+konsole
+plasma-meta
+plasma-workspace
+sddm
+intel-ucode
+debugedit
+fakeroot
+fish
+reflector
+
+# Graphics
+converseen
+gimp
+gwenview
+kolourpaint
+okular
+# Multimedia
+easyeffects
+hypnotix
+jalv
+mpv
+haruna
+pavucontrol
+# Internet
+kdeconnect
+localsend
+thunderbird
+vivaldi
+# Office
+libreoffice-fresh
+# System
+btop
+czkawka-gui
+gufw
+kitty
+kvantum
+yazi
+# Utilities
+brightnessctl
+filelight
+kcalc
+krusader
+vim
+xpad
+zoxide
+lsp-plugins-lv2
+ntfs-3g
+rclone
+tesseract
+tesseract-data-eng
+tesseract-data-tur
+
