@@ -1,19 +1,3 @@
-# Plasma
-ark
-dolphin
-kate
-konsole
-plasma-meta
-plasma-workspace
-sddm
-intel-ucode
-debugedit
-fakeroot
-fish
-reflector
-wget
-os-prober
-
 # Graphics
 converseen
 gimp
@@ -46,7 +30,6 @@ brightnessctl
 filelight
 kcalc
 krusader
-vim
 xpad
 zoxide
 lsp-plugins-lv2
@@ -55,4 +38,7 @@ rclone
 tesseract
 tesseract-data-eng
 tesseract-data-tur
+fish
+reflector
+os-prober
 
