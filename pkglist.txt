@@ -44,4 +44,5 @@ os-prober
 fastfetch
 kdialog
 nvidia-prime
+kio-admin
 

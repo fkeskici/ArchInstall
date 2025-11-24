@@ -125,6 +125,7 @@ Description=Gece 21:00'de gece modunu başlat
 [Timer]
 OnCalendar=*-*-* 21:00:00
 Persistent=true
+Unit=brightness-night.service
 
 [Install]
 WantedBy=timers.target
@@ -140,6 +141,7 @@ Description=Sabah 06:30'de gündüz modunu başlat
 [Timer]
 OnCalendar=*-*-* 06:30:00
 Persistent=true
+Unit=brightness-day.service
 
 [Install]
 WantedBy=timers.targe
