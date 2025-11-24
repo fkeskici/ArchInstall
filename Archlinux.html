@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->
+
+<head profile="http://dublincore.org/documents/dcmi-terms/">
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+<title xml:lang="en-US">- no title specified</title>
+<meta name="DCTERMS.title" content="" xml:lang="en-US"/>
+
+<meta name="DCTERMS.language" content="en-US" scheme="DCTERMS.RFC4646"/>
+<meta name="DCTERMS.source" content="http://xml.openoffice.org/odf2xhtml"/>
+
+<meta name="DCTERMS.issued" content="2025-11-24T16:06:16.397682434" scheme="DCTERMS.W3CDTF"/>
+
+<meta name="DCTERMS.modified" content="2025-11-24T16:21:35.591782297" scheme="DCTERMS.W3CDTF"/>
+
+
+<meta name="xsl:vendor" content="libxslt"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" hreflang="en"/>
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" hreflang="en"/>
+<link rel="schema.DCTYPE" href="http://purl.org/dc/dcmitype/" hreflang="en"/>
+<link rel="schema.DCAM" href="http://purl.org/dc/dcam/" hreflang="en"/>
+
+<style>
+    table { border-collapse:collapse; border-spacing:0; empty-cells:show }
+    td, th { vertical-align:top; font-size:12pt;}
+    h1, h2, h3, h4, h5, h6 { clear:both;}
+    ol, ul { margin:0; padding:0;}
+    li { list-style: none; margin:0; padding:0;}
+    span.footnodeNumber { padding-right:1em; }
+    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
+    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}
+    .paragraph-P1{ font-size:20pt; font-family:Arial; writing-mode:horizontal-tb; direction:ltr;text-align:center ! important; font-weight:bold; }
+    .paragraph-P2{ font-size:12pt; font-family:Arial; writing-mode:horizontal-tb; direction:ltr;}
+    .paragraph-P3{ font-size:12pt; font-family:Arial; writing-mode:horizontal-tb; direction:ltr;font-weight:bold; }
+    .paragraph-P4{ font-size:12pt; font-family:Arial; writing-mode:horizontal-tb; direction:ltr;font-weight:bold; }
+    .paragraph-P5{ font-size:12pt; font-family:Arial; writing-mode:horizontal-tb; direction:ltr;}
+    .text-T1{ font-weight:bold; }
+    .text-T2{ font-weight:bold; }
+    /* ODF styles with no properties representable as CSS:
+    .T3 .T4  { } */
+</style>
+</head>
+
+<body dir="ltr" style="max-width:8.5in;margin-top:0.7874in; margin-bottom:0.7874in; margin-left:0.7874in; margin-right:0.7874in; ">
+
+<p class="paragraph-P1">ARCH LINUX + NVIDIA GTX 1050 TI OPTİMİZE </p>
+
+<p class="paragraph-P1">REHBER (2025)</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">1. NVIDIA SÜRÜCÜ KURULUMU</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">Sistemi güncelleyin:</p>
+
+<p class="paragraph-P2">sudo pacman -Syu</p>
+
+<p class="paragraph-P2"> </p>
+
+<p class="paragraph-P3">NVIDIA için gerekli paketler:</p>
+
+<p class="paragraph-P2">sudo pacman -S nvidia-prime</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">Hibrit sistemlerde prime-run ile NVIDIA kullanılır.</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2"> <span class="text-T1">2. GÜVENL</span><span class="text-T2">İ</span><span class="text-T1"> GRUB PARAMETRELER</span></p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">Wayland ve NVIDIA için minimum güvenli parametre:</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2">GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nowatchdog nvme_load=YES zswap.enabled=0 nvidia-drm.modeset=1 nvidia-drm.fbdev=1"</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">3. MODPROBE AYARLARI</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">Dosya:</p>
+
+<p class="paragraph-P2"><span class="text-T3">kate </span>/etc/modprobe.d/nvidia.conf</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">İçerik:</p>
+
+<p class="paragraph-P2">options nvidia-drm modeset=1</p>
+
+<p class="paragraph-P2">options nvidia NVreg_PreserveVideoMemoryAllocations=1</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">4. MKINITCPIO AYARLARI</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">MODULES satırı:</p>
+
+<p class="paragraph-P2">MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2">Initramfs güncelleme:</p>
+
+<p class="paragraph-P2">sudo mkinitcpio -P</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P4"><span class="text-T3">5</span>. SSD TRIM</p>
+
+<p class="paragraph-P4"><span class="text-T3">T</span>rim aktif ederek SSD ömrü artırılır:</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2">sudo systemctl enable --now fstrim.timer</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2"><span class="text-T2">6</span><span class="text-T1">. SWAPPINESS</span></p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">Dosya:</p>
+
+<p class="paragraph-P2"><span class="text-T3">kate </span>/etc/sysctl.d/99-swappiness.conf</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2">İçerik:</p>
+
+<p class="paragraph-P2">vm.swappiness=10</p>
+
+<p class="paragraph-P2">vm.vfs_cache_pressure=50</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3"><span class="text-T3">7</span>. ZRAM KURULUMU</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2">sudo pacman -S zram-generator</p>
+
+<p class="paragraph-P2"><span class="text-T3">kate </span>/etc/systemd/zram-generator.conf:</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P4">İçerik:</p>
+
+<p class="paragraph-P2">[zram0]</p>
+
+<p class="paragraph-P2">zram-size = min(ram / 2, 4096)</p>
+
+<p class="paragraph-P2">compression-algorithm = zstd</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3"><span class="text-T3">8</span>. <span class="text-T3">DOSYA İNDEX </span>KAPATMA</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">Tam kapatma:</p>
+
+<p class="paragraph-P5">System Settings → Search → File Search → File Indexing → false</p>
+
+<p class="paragraph-P2"> </p>
+
+<p class="paragraph-P3"><span class="text-T4">9</span>. KDE + KWIN OPTİMİZASYONU</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">Kapatılacak efektler:</p>
+
+<p class="paragraph-P2">• Blur (bulan<span class="text-T4">ı</span>kl<span class="text-T4">ı</span>k)</p>
+
+<p class="paragraph-P2">• Magic Lamp</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3"><span class="text-T4">10</span>. NVIDIA İLE UYGULAMA ÇALIŞTIRMA</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2">prime-run uygulama_adi</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P3">Örnek:</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2">prime-run steam</p>
+<p class="paragraph-P2"> </p>
+<p class="paragraph-P2">prime-run blende</p>
+</body>
+
+</html>
