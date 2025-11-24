@@ -41,4 +41,7 @@ tesseract-data-tur
 fish
 reflector
 os-prober
+fastfetch
+kdialog
+nvidia-prime
 
